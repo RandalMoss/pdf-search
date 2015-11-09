@@ -9,8 +9,10 @@ from threading import Thread
 
 class DetectImagePdf():
     def __init__(self):
-        fileDirectory = "/Users/rmoss/Desktop/examplePDFs/rawPdfs"
-        outputDirectory = "/Users/rmoss/Desktop"
+        fullPath = os.path.realpath(__file__)
+        config = open(('%s/' + 'config.txt') % os.path.dirname(fullPath), 'r')
+        fileDirectory = config.readline().split('=')[1].strip('\n')
+        outputDirectory = config.readline().split('=')[1].strip('\n')
         for subdir, dirs, files in os.walk(fileDirectory):
             for src in files:
                 if(".DS_Store" in src):

@@ -1,0 +1,2 @@
+pdfFileDirectory=INSERT PATH TO PDFs (must also rename example.config.txt to config.txt)
+outputDirectory=INSERT OUTPUT DIRECTORY PATH
